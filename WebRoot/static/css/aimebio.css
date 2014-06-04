@@ -1,0 +1,24 @@
+.container{
+	padding:25px 0;
+	border-bottom:2px solid #d6d7d2;
+}
+.container .first-img{
+	float:left;
+	margin-right:20px;
+}
+.container .img{
+	float:right;
+	margin-left:20px;
+}
+.last-container {
+	padding-bottom:0;
+	border-bottom:none;
+}
+.container .title{
+	font-size:17px;
+	color:#92a15e;
+	font-weight:bolder;
+}
+.container .content{
+	line-height:18px;
+}

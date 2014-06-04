@@ -1,0 +1,32 @@
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}
+a{
+	text-decoration:none;
+	color:#57654b;
+}
+#variableatag a {
+	color:#000000;	
+    text-decoration:none;
+}
+
+.img-wrapper{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	*display: block;
+	*font-size: 175px;
+	*font-family:Arial;
+}
+.img-wrapper img{
+	vertical-align:middle;
+}

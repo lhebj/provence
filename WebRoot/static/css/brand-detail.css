@@ -1,0 +1,90 @@
+.right-part .brand-show-wrapper{
+	margin-top:24px;
+	margin-bottom:38px;
+}
+.right-part .brand-show-wrapper .pic-containers{
+	border:1px solid #d0d5cf;
+	width:318px;
+	float:left;
+}
+.right-part .brand-show-wrapper .pic-containers .divi{
+	height:1px;
+	display:block;
+	margin:0 5px 0 4px;
+	background-color:#d0d5cf;
+}
+.right-part .brand-show-wrapper .big-wrapper{
+	height:212px;
+	width:318px;
+	line-height:212px;
+}
+.right-part .brand-show-wrapper  .small-wrapper{
+	width:105px;
+	height:93px;
+	line-height:93px;
+	float:left;
+}
+.right-part .brand-show-wrapper .hivi{
+	margin-top:6px;
+	margin-bottom:1px;
+	width:1px;
+	display:block;
+	float:left;
+	height:86px;
+	background-color:#d0d5cf;
+}
+.right-part .brand-show-wrapper .brand-desc-word{
+	width:342px;
+	float:right;
+}
+.right-part .brand-show-wrapper .brand-desc-word .title{
+	font-size:14px;
+	line-height:14px;
+	padding-bottom:10px;
+	border-bottom: 1px solid #d7d8d2;
+	margin-bottom:10px;
+}
+.right-part .brand-show-wrapper .brand-description{
+	line-height:18px;
+	font-family:"adobe 黑体";
+	font-size:12px;
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
+.introduce-use-container .choose-use-contains li{
+	float:left;
+}
+.introduce-use-container .choose-use-contains li a{
+	line-height:25px;
+	text-align:center;
+	border-top: 1px solid #d6d9d2;
+	border-bottom: 1px solid #d6d9d2;
+	display:block;
+}
+.introduce-use-container .choose-use-contains li a.selected{
+	border: 1px solid #acb2a4;
+	border-bottom: 1px solid #d6d9d2;
+	background-color:#5a644b;
+	color:#ffffff;
+}
+.introduce-use-container .choose-use-contains .contains-choose{
+	width:320px;
+}
+.introduce-use-container .choose-use-contains .use-choose{
+	width:360px;
+}
+.item-use-contains{
+	min-height:490px;
+}
+.introduce-use-container .contains-item, .introduce-use-container .use-item{
+	padding-top:44px;
+	line-height:18px;
+	font-family:"adobe 黑体";
+	font-size:12px;
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
+.introduce-use-container .goods-item{
+	line-height:18px;
+	display:block;
+}

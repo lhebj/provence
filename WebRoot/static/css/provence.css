@@ -1,0 +1,71 @@
+﻿.brand a{
+	background:#fee9d8;
+}
+.provence{
+	padding:30px 5px 20px 30px;
+	background-color:#5a644b;
+	color:#fcd6b1;
+	margin-top:32px;
+	border-top: 1px solid #d6d9d2;
+	border-bottom: 1px solid #d6d9d2;
+	margin-bottom:26px;
+}
+.provence .left-content{
+	margin-right:30px;
+	font-weight:bolder;
+	text-align:center;
+	width:164px;
+	float:left;
+}
+.provence .right-content{
+	width:378px;
+	float:right;
+	line-height:24px;
+	font-weight:bold;
+	height:331px;
+	overflow:hidden;
+	padding-right:60px;
+}
+.provence .date, .provence .weekday{
+	line-height:24px;
+	font-size:19px;
+}
+.provence .weekday{
+	margin-bottom:8px;
+}
+.provence .temp-pic{
+	display:block;
+	margin-bottom:21px;
+}
+.provence .temp{
+	line-height:52px;
+	font-size:26px;
+}
+.provence .pro-title{
+	line-height:46px;
+	margin-bottom:6px;
+	font-size:21px;
+}
+.provence-item{
+	margin-bottom:26px;
+}
+.provence-last-item{
+	margin-bottom:15px;
+}
+.provence-item .show-pic{
+	margin-bottom:7px;
+}
+/*
+.provence-item  .show-content{
+	line-height:18px;
+	color:#767779;
+	font-size:13px;
+}
+*/
+.provence-item  .show-content{
+	line-height:18px;
+	font-family:"adobe黑体";
+	font-size:12px;
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
