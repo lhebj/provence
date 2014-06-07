@@ -697,6 +697,8 @@ public final class StringUtil {
 			
 			String regEx_sup_start = "<sup>"; //过滤sup
 			String regEx_sup_end = "</sup>"; //过滤sup
+			
+			String regEx_aname_end = "<a[\\s\\S]*?name=[^>]*?>"; //a name , not a href
 
 			pattern = Pattern.compile(regEx_script, Pattern.CASE_INSENSITIVE);
 			matcher = pattern.matcher(htmlStr);
@@ -742,6 +744,9 @@ public final class StringUtil {
 			matcher = pattern.matcher(htmlStr);
 			htmlStr = matcher.replaceAll(""); // 过滤sup
 
+			pattern = Pattern.compile(regEx_aname_end, Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(htmlStr);
+			htmlStr = matcher.replaceAll(""); // //a name , not a href
 			
 			textStr = htmlStr.replaceAll("<(?!(img|table|/table|tr|/tr|td|/td|p|/p|br|a|/a|b|/b|i|/i|u|/u|strike|/strike|h1|/h1|h2|/h2|h3|/h3|hr))[^>]*>","");
 

@@ -46,8 +46,8 @@
 }
 .right-part .brand-show-wrapper .brand-description{
 	line-height:18px;
-	font-family:"adobe 黑体";
-	font-size:12px;
+	font-family:"Adobe 黑体 Std R";
+	font-size:13px;
 	text-align:justify;
 	text-justify:inter-ideograph;
 }
@@ -79,11 +79,17 @@
 .introduce-use-container .contains-item, .introduce-use-container .use-item{
 	padding-top:44px;
 	line-height:18px;
-	font-family:"adobe 黑体";
-	font-size:12px;
+	font-family:"Adobe 黑体 Std R";
+	font-size:13px;
 	text-align:justify;
 	text-justify:inter-ideograph;
 }
+
+.introduce-use-container .contains-item td, .introduce-use-container .use-item td{
+	line-height:110%;
+	padding:4px;
+}
+
 .introduce-use-container .goods-item{
 	line-height:18px;
 	display:block;
