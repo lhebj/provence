@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<host>
+	<!-- css -->
+	<!--
+	<JSCompress>
+		<JSFiles>
+			<JSFile ref="stylecss_optimize/common/global.css" sequence="8"></JSFile>
+			<JSFile ref="stylecss_optimize/extCssNew.css" sequence="4"></JSFile>
+			<JSFile ref="stylecss_optimize/data-view.css" sequence="0"></JSFile>
+			<JSFile ref="stylecss_optimize/comment.css" sequence="1"></JSFile>
+			<JSFile ref="stylecss_optimize/common/site-nav.css" sequence="8"></JSFile>
+			<JSFile ref="stylecss_optimize/head.css" sequence="2"></JSFile>
+			<JSFile ref="stylecss_optimize/foot.css" sequence="3"></JSFile>
+			<JSFile ref="stylecss_optimize/webim.css" sequence="6"></JSFile>
+			<JSFile ref="stylecss_optimize/support.css" sequence="7"></JSFile>
+			<JSFile ref="stylecss_optimize/jquery/datatables.css" sequence="8"></JSFile>
+			<JSFile ref="stylecss_optimize/jquery/datepicker.css" sequence="8"></JSFile>
+			<JSFile ref="stylecss_optimize/jquery/dialog.css" sequence="8"></JSFile>
+		</JSFiles>
+		<JSCompressFile ref="stylecss_optimize/css-min.css"></JSCompressFile>
+	</JSCompress>
+	-->
+	<!-- head-content.jsp css -->
+	<!--
+	<JSCompress>
+		<JSFiles>
+			<JSFile ref="stylecss_optimize/common/reset.css" sequence="0"></JSFile>
+			<JSFile ref="stylecss_optimize/common/global.css" sequence="1"></JSFile>
+			<JSFile ref="stylecss_optimize/common/site-nav.css" sequence="8"></JSFile>
+			<JSFile ref="stylecss_optimize/webim.css" sequence="2"></JSFile>
+			<JSFile ref="stylecss_optimize/jquery/dialog.css" sequence="8"></JSFile>
+			<JSFile ref="stylecss_optimize/support.css" sequence="3"></JSFile>
+		</JSFiles>
+		<JSCompressFile ref="stylecss_optimize/common/global-min.css"></JSCompressFile>
+	</JSCompress>
+	-->
+
+</host>

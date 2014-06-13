@@ -1,0 +1,1 @@
+$(function(){var A=$(".banner").height();var B=$(".banner").width();$("#banner-slides").slidesjs({width:B,height:A,navigation:{active:false},pagination:{active:false},play:{effect:"slide",interval:5000,auto:true,pauseOnHover:false,restartDelay:2500}})});
