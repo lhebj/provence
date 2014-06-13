@@ -30,10 +30,26 @@ $(function(){
 	});
 	
 	$(".video-pic").on("click", function(){
+		hideBgMusic();
 		$("#video-play").appendTo($("body"));
 		$("#video-play").show();
 	});
 	$(".right-video-side").on("click", function(){
 		$("#video-play").hide();
+		showBgMusic();
 	});
+	
+	function showBgMusic(){
+		if(navigator.userAgent.indexOf("MSIE")>=0 || navigator.userAgent.indexOf("rv:11.0")>=0 ) { 
+			$("#bgmusic").append("<bgsound loop=\"infinite\" volume=\"-2500\" src=\"music/zhile.mp3\" >"); 
+		}else{
+			$("#bgmusic").append("<embed src=\"music/zhile.mp3\" loop=\"true\" VOLUME=0 hidden=\"true\"></embed>"); 
+		} 
+		
+	}
+	
+	function hideBgMusic(){
+		$("#bgmusic").empty();
+	}
+	
 })

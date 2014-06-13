@@ -56,6 +56,13 @@ body {
 </head>
 
 <body>
+	<div id="bgmusic">
+	<%if(request.getHeader( "User-Agent" ).toLowerCase().indexOf( "msie" ) >= 0 || request.getHeader( "User-Agent" ).toLowerCase().indexOf( "rv:11.0" ) >= 0 ) {%>
+		<bgsound loop="infinite" volume="-2500" src="music/zhile.mp3" >
+	<%}else{%>
+		<embed src="music/zhile.mp3" loop="true" VOLUME=0 hidden="true"></embed>
+	<%}%>
+	</div>
 	<div class="main-section">
 		<%@ include file="head.jsp"%>
 		<div class="index-container">
