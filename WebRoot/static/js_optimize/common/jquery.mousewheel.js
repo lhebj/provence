@@ -1,8 +1,201 @@
-/* Copyright (c) 2013 Brandon Aaron (http://brandon.aaron.sh)
+/*! Copyright (c) 2013 Brandon Aaron (http://brandon.aaron.sh)
  * Licensed under the MIT License (LICENSE.txt).
  *
  * Version: 3.1.9
  *
  * Requires: jQuery 1.2.2+
  */
-(function(A){if(typeof define==="function"&&define.amd){define(["jquery"],A)}else{if(typeof exports==="object"){module.exports=A}else{A(jQuery)}}}(function(C){var D=["wheel","mousewheel","DOMMouseScroll","MozMousePixelScroll"],J=("onwheel" in document||document.documentMode>=9)?["wheel"]:["mousewheel","DomMouseScroll","MozMousePixelScroll"],H=Array.prototype.slice,I,B;if(C.event.fixHooks){for(var E=D.length;E;){C.event.fixHooks[D[--E]]=C.event.mouseHooks}}var F=C.event.special.mousewheel={version:"3.1.9",setup:function(){if(this.addEventListener){for(var L=J.length;L;){this.addEventListener(J[--L],K,false)}}else{this.onmousewheel=K}C.data(this,"mousewheel-line-height",F.getLineHeight(this));C.data(this,"mousewheel-page-height",F.getPageHeight(this))},teardown:function(){if(this.removeEventListener){for(var L=J.length;L;){this.removeEventListener(J[--L],K,false)}}else{this.onmousewheel=null}},getLineHeight:function(L){return parseInt(C(L)["offsetParent" in C.fn?"offsetParent":"parent"]().css("fontSize"),10)},getPageHeight:function(L){return C(L).height()},settings:{adjustOldDeltas:true}};C.fn.extend({mousewheel:function(L){return L?this.bind("mousewheel",L):this.trigger("mousewheel")},unmousewheel:function(L){return this.unbind("mousewheel",L)}});function K(L){var N=L||window.event,R=H.call(arguments,1),T=0,P=0,O=0,Q=0;L=C.event.fix(N);L.type="mousewheel";if("detail" in N){O=N.detail*-1}if("wheelDelta" in N){O=N.wheelDelta}if("wheelDeltaY" in N){O=N.wheelDeltaY}if("wheelDeltaX" in N){P=N.wheelDeltaX*-1}if("axis" in N&&N.axis===N.HORIZONTAL_AXIS){P=O*-1;O=0}T=O===0?P:O;if("deltaY" in N){O=N.deltaY*-1;T=O}if("deltaX" in N){P=N.deltaX;if(O===0){T=P*-1}}if(O===0&&P===0){return }if(N.deltaMode===1){var S=C.data(this,"mousewheel-line-height");T*=S;O*=S;P*=S}else{if(N.deltaMode===2){var M=C.data(this,"mousewheel-page-height");T*=M;O*=M;P*=M}}Q=Math.max(Math.abs(O),Math.abs(P));if(!B||Q<B){B=Q;if(A(N,Q)){B/=40}}if(A(N,Q)){T/=40;P/=40;O/=40}T=Math[T>=1?"floor":"ceil"](T/B);P=Math[P>=1?"floor":"ceil"](P/B);O=Math[O>=1?"floor":"ceil"](O/B);L.deltaX=P;L.deltaY=O;L.deltaFactor=B;L.deltaMode=0;R.unshift(L,T,P,O);if(I){clearTimeout(I)}I=setTimeout(G,200);return(C.event.dispatch||C.event.handle).apply(this,R)}function G(){B=null}function A(M,L){return F.settings.adjustOldDeltas&&M.type==="mousewheel"&&L%120===0}}));
+
+(function (factory) {
+    if ( typeof define === 'function' && define.amd ) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node/CommonJS style for Browserify
+        module.exports = factory;
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+
+    var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
+        toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
+                    ['wheel'] : ['mousewheel', 'DomMouseScroll', 'MozMousePixelScroll'],
+        slice  = Array.prototype.slice,
+        nullLowestDeltaTimeout, lowestDelta;
+
+    if ( $.event.fixHooks ) {
+        for ( var i = toFix.length; i; ) {
+            $.event.fixHooks[ toFix[--i] ] = $.event.mouseHooks;
+        }
+    }
+
+    var special = $.event.special.mousewheel = {
+        version: '3.1.9',
+
+        setup: function() {
+            if ( this.addEventListener ) {
+                for ( var i = toBind.length; i; ) {
+                    this.addEventListener( toBind[--i], handler, false );
+                }
+            } else {
+                this.onmousewheel = handler;
+            }
+            // Store the line height and page height for this particular element
+            $.data(this, 'mousewheel-line-height', special.getLineHeight(this));
+            $.data(this, 'mousewheel-page-height', special.getPageHeight(this));
+        },
+
+        teardown: function() {
+            if ( this.removeEventListener ) {
+                for ( var i = toBind.length; i; ) {
+                    this.removeEventListener( toBind[--i], handler, false );
+                }
+            } else {
+                this.onmousewheel = null;
+            }
+        },
+
+        getLineHeight: function(elem) {
+            return parseInt($(elem)['offsetParent' in $.fn ? 'offsetParent' : 'parent']().css('fontSize'), 10);
+        },
+
+        getPageHeight: function(elem) {
+            return $(elem).height();
+        },
+
+        settings: {
+            adjustOldDeltas: true
+        }
+    };
+
+    $.fn.extend({
+        mousewheel: function(fn) {
+            return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
+        },
+
+        unmousewheel: function(fn) {
+            return this.unbind('mousewheel', fn);
+        }
+    });
+
+
+    function handler(event) {
+        var orgEvent   = event || window.event,
+            args       = slice.call(arguments, 1),
+            delta      = 0,
+            deltaX     = 0,
+            deltaY     = 0,
+            absDelta   = 0;
+        event = $.event.fix(orgEvent);
+        event.type = 'mousewheel';
+
+        // Old school scrollwheel delta
+        if ( 'detail'      in orgEvent ) { deltaY = orgEvent.detail * -1;      }
+        if ( 'wheelDelta'  in orgEvent ) { deltaY = orgEvent.wheelDelta;       }
+        if ( 'wheelDeltaY' in orgEvent ) { deltaY = orgEvent.wheelDeltaY;      }
+        if ( 'wheelDeltaX' in orgEvent ) { deltaX = orgEvent.wheelDeltaX * -1; }
+
+        // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
+        if ( 'axis' in orgEvent && orgEvent.axis === orgEvent.HORIZONTAL_AXIS ) {
+            deltaX = deltaY * -1;
+            deltaY = 0;
+        }
+
+        // Set delta to be deltaY or deltaX if deltaY is 0 for backwards compatabilitiy
+        delta = deltaY === 0 ? deltaX : deltaY;
+
+        // New school wheel delta (wheel event)
+        if ( 'deltaY' in orgEvent ) {
+            deltaY = orgEvent.deltaY * -1;
+            delta  = deltaY;
+        }
+        if ( 'deltaX' in orgEvent ) {
+            deltaX = orgEvent.deltaX;
+            if ( deltaY === 0 ) { delta  = deltaX * -1; }
+        }
+
+        // No change actually happened, no reason to go any further
+        if ( deltaY === 0 && deltaX === 0 ) { return; }
+
+        // Need to convert lines and pages to pixels if we aren't already in pixels
+        // There are three delta modes:
+        //   * deltaMode 0 is by pixels, nothing to do
+        //   * deltaMode 1 is by lines
+        //   * deltaMode 2 is by pages
+        if ( orgEvent.deltaMode === 1 ) {
+            var lineHeight = $.data(this, 'mousewheel-line-height');
+            delta  *= lineHeight;
+            deltaY *= lineHeight;
+            deltaX *= lineHeight;
+        } else if ( orgEvent.deltaMode === 2 ) {
+            var pageHeight = $.data(this, 'mousewheel-page-height');
+            delta  *= pageHeight;
+            deltaY *= pageHeight;
+            deltaX *= pageHeight;
+        }
+
+        // Store lowest absolute delta to normalize the delta values
+        absDelta = Math.max( Math.abs(deltaY), Math.abs(deltaX) );
+
+        if ( !lowestDelta || absDelta < lowestDelta ) {
+            lowestDelta = absDelta;
+
+            // Adjust older deltas if necessary
+            if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
+                lowestDelta /= 40;
+            }
+        }
+
+        // Adjust older deltas if necessary
+        if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
+            // Divide all the things by 40!
+            delta  /= 40;
+            deltaX /= 40;
+            deltaY /= 40;
+        }
+
+        // Get a whole, normalized value for the deltas
+        delta  = Math[ delta  >= 1 ? 'floor' : 'ceil' ](delta  / lowestDelta);
+        deltaX = Math[ deltaX >= 1 ? 'floor' : 'ceil' ](deltaX / lowestDelta);
+        deltaY = Math[ deltaY >= 1 ? 'floor' : 'ceil' ](deltaY / lowestDelta);
+
+        // Add information to the event object
+        event.deltaX = deltaX;
+        event.deltaY = deltaY;
+        event.deltaFactor = lowestDelta;
+        // Go ahead and set deltaMode to 0 since we converted to pixels
+        // Although this is a little odd since we overwrite the deltaX/Y
+        // properties with normalized deltas.
+        event.deltaMode = 0;
+
+        // Add event and delta to the front of the arguments
+        args.unshift(event, delta, deltaX, deltaY);
+
+        // Clearout lowestDelta after sometime to better
+        // handle multiple device types that give different
+        // a different lowestDelta
+        // Ex: trackpad = 3 and mouse wheel = 120
+        if (nullLowestDeltaTimeout) { clearTimeout(nullLowestDeltaTimeout); }
+        nullLowestDeltaTimeout = setTimeout(nullLowestDelta, 200);
+
+        return ($.event.dispatch || $.event.handle).apply(this, args);
+    }
+
+    function nullLowestDelta() {
+        lowestDelta = null;
+    }
+
+    function shouldAdjustOldDeltas(orgEvent, absDelta) {
+        // If this is an older event and the delta is divisable by 120,
+        // then we are assuming that the browser is treating this as an
+        // older mouse wheel event and that we should divide the deltas
+        // by 40 to try and get a more usable deltaFactor.
+        // Side note, this actually impacts the reported scroll distance
+        // in older browsers and can cause scrolling to be slower than native.
+        // Turn this off by setting $.event.special.mousewheel.settings.adjustOldDeltas to false.
+        return special.settings.adjustOldDeltas && orgEvent.type === 'mousewheel' && absDelta % 120 === 0;
+    }
+
+}));

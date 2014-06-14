@@ -6,6 +6,7 @@ public class IndexDTO {
 	public String typeIdx;
 	public String path;
 	public String playcodeIdx;
+	public String vid;
 	
 	
 	public Long getIdIdx() {
@@ -31,6 +32,12 @@ public class IndexDTO {
 	}
 	public void setPlaycodeIdx(String playcodeIdx) {
 		this.playcodeIdx = playcodeIdx;
+	}
+	public String getVid() {
+		return vid;
+	}
+	public void setVid(String vid) {
+		this.vid = vid;
 	}
 
 }

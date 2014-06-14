@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ page import="java.util.HashMap" %>
 <%
-	String version = "201406120214";
+	String version = "201406140214";
 	String PATH = request.getContextPath();
 	String BASE_Path = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+PATH+"/";
 

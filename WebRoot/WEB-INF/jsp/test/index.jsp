@@ -7,6 +7,7 @@
 	String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -39,13 +40,6 @@ body {
 	margin-bottom:138px;
 }
 </style>
-<script type="text/javascript"
-	src="<%=JS_PATH%>common/jquery.js?v=<%=version%>"></script>
-<script type="text/javascript"
-	src="<%=JS_PATH%>common/jquery.slides.js?v=<%=version%>"></script>
-<script type="text/javascript" src="<%=JS_PATH%>index.js?v=<%=version%>"></script>
-<script type="text/javascript"
-	src="<%=JS_PATH%>register.js?v=<%=version%>"></script>
 <!--
 	<%if(request.getHeader( "User-Agent" ).toLowerCase().indexOf( "msie" ) >= 0 || request.getHeader( "User-Agent" ).toLowerCase().indexOf( "rv:11.0" ) >= 0 ) {%>
 		<bgsound loop="infinite" volume="-2500" src="music/zhile.mp3">
@@ -53,14 +47,17 @@ body {
 		<embed src="music/zhile.mp3" loop="true" VOLUME=0 hidden="true"></embed>
 	<%}%>
 	-->
+	
+<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+
 </head>
 
 <body>
-	<div id="bgmusic">
+	<div id="bgmusic">	 
 	<%if(request.getHeader( "User-Agent" ).toLowerCase().indexOf( "msie" ) >= 0 || request.getHeader( "User-Agent" ).toLowerCase().indexOf( "rv:11.0" ) >= 0 ) {%>
 		<bgsound loop="infinite" volume="-2500" src="music/zhile.mp3" >
-	<%}else{%>
-		<embed src="music/zhile.mp3" loop="true" VOLUME=0 hidden="true"></embed>
+	<%}else{ %>
+		<audio id="audio" src="music/zhile.mp3" hidden="hidden" autoplay="autoplay" volume="0.1" loop="loop"></audio>
 	<%}%>
 	</div>
 	<div class="main-section">
@@ -74,9 +71,10 @@ body {
 							</c:if> <!-- 视频时，显示一个默认图片，默认图片的数据位 <img src="${indexDto.path}"></img>-->
 							<c:if test="${indexDto.typeIdx =='video'}">
 								<img class="video-pic" src="${indexDto.path}"></img>
+								<input type="hidden" id="vid" value="${indexDto.vid}">
 								<div id="video-play" class="video-play">
 									<div class="video-side"></div>
-									${indexDto.playcodeIdx}
+									<div id="youkuplayer" style="width:968px;height:515px"></div>
 									<div class="video-side right-video-side">
 										<a href="javascript:;">关<br />闭<br />视<br />频
 										</a>
@@ -132,8 +130,13 @@ body {
 
 
 	</div>
-	<script type="text/javascript">
-		
-	</script>
+
+<script type="text/javascript"
+	src="<%=JS_PATH%>common/jquery.js?v=<%=version%>%>"></script>
+<script type="text/javascript"
+	src="<%=JS_PATH%>common/jquery.slides.js?v=<%=version%>"></script>
+<script type="text/javascript" src="<%=JS_PATH%>index.js?v=<%=version%>"></script>
+<script type="text/javascript"
+	src="<%=JS_PATH%>register.js?v=<%=version%>"></script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.provence.pojo;
 
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -107,7 +109,16 @@ public class Index implements java.io.Serializable {
 			dto.setPath(UploadFileUtil.getContentPath(getPic()));
 		}		
 		dto.setTypeIdx(typeIdx);
-		dto.setPlaycodeIdx(playcodeIdx);
+		if(playcodeIdx!=null){
+			dto.setPlaycodeIdx(playcodeIdx);
+			Pattern pattern = Pattern.compile("src=\"[\\s\\S]*?\"");
+			Matcher m = pattern.matcher(playcodeIdx);
+			if (m.find()) {
+				String match = m.group();
+				dto.setVid(match.substring(match.lastIndexOf("/")+1, match.lastIndexOf("\"")));
+			}			
+		}
+		
 		return dto;
 	}
 
