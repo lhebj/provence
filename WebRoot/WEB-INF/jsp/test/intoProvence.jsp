@@ -71,6 +71,41 @@ body {
 		$('#perfect-scrollbar').perfectScrollbar({suppressScrollX:true});
 	});
 </script>
+
+<script>
+function imagezoom(new_w, new_h){
+    var img = document.createElement('img');
+    img.src = this.src;
+    var src_w = img.width;
+    var src_h = img.height;
+   
+    var zoom_w = 0, zoom_h = 0;
+    if(src_w > new_w || src_h > new_h){
+        var scale_w = new_w / src_w;
+        var scale_h = new_h / src_h;
+        var b = scale_w < scale_h;
+           
+        if(b){
+            zoom_w = src_w * scale_w;
+            zoom_h = src_h * scale_w;
+        }else{
+            zoom_w = src_w * scale_h;
+            zoom_h = src_h * scale_h;
+        }
+    }else{
+        zoom_w = src_w;
+        zoom_h = src_h;
+    }
+       
+    this.style.marginLeft = Math.abs(new_w-zoom_w)/2+'px';
+    this.style.marginTop = Math.abs(new_h-zoom_h)/2+'px';
+    this.style.marginRight = Math.abs(new_w-zoom_w)/2+'px';
+    this.style.marginBottom = Math.abs(new_h-zoom_h)/2+'px';
+   
+    this.width = zoom_w;
+    this.height = zoom_h;
+}
+</script>
 </head>
 
 <body>
@@ -162,6 +197,7 @@ body {
 			<div class="right-part">
 				<div class="provence clearfix">
 					<div class="left-content">
+					<!-- 
 						<c:choose>
 						<c:when test="${weatherData.weather} == 'Sunny'}">
 							<img class="temp-pic" src="<%=IMAGE_PATH%>sunny.png" />
@@ -179,6 +215,8 @@ body {
 							<img class="temp-pic" src="<%=IMAGE_PATH%>sunny.png" />
 						</c:otherwise>
 						</c:choose>
+					 -->
+					 	<img class="temp-pic" src="weather-icon/${weatherData.imgCode}" onload="imagezoom.call(this, 164, 150);" />
 						<p class="temp">${weatherData.lowTemp}℃ ~ ${weatherData.highTemp}℃</p>
 						<p class="pro-title">普罗旺斯</p>
 						<p class="date">${weatherData.date} <div id="currentTime"></div></p>

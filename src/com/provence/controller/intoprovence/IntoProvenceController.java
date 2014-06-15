@@ -16,11 +16,11 @@ import com.provence.pojo.IntoProvenceStory;
 import com.provence.service.banner.IBannerService;
 import com.provence.service.intoprovence.IIntoProvenceService;
 import com.provence.service.intoprovence.IIntoProvenceStoryService;
-import com.provence.weather.Weather;
-import com.provence.weather.YahooWeather;
 import com.provence.web.dto.IntoProvenceDTO;
 import com.provence.web.util.PageUtil;
 import com.provence.web.util.ParamUtils;
+import com.weather.Weather;
+import com.weather.YahooWeather;
 
 
 @Controller
