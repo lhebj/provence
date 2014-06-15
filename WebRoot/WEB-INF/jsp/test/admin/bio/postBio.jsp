@@ -70,10 +70,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													},
 
 													subscript : {
-														visible : true
+														visible : false
 													},
 													superscript : {
-														visible : true
+														visible : false
 													},
 
 													undo : {
@@ -91,37 +91,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													},
 													insertHorizontalRule : {
 														visible : true
-													},
-
-													h4 : {
-														visible : true,
-														className : 'h4',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h4>'
-																: 'h4',
-														tags : [ 'h4' ],
-														tooltip : 'Header 4'
-													},
-													h5 : {
-														visible : true,
-														className : 'h5',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h5>'
-																: 'h5',
-														tags : [ 'h5' ],
-														tooltip : 'Header 5'
-													},
-													h6 : {
-														visible : true,
-														className : 'h6',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h6>'
-																: 'h6',
-														tags : [ 'h6' ],
-														tooltip : 'Header 6'
 													},
 
 													cut : {
@@ -208,10 +177,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													},
 
 													subscript : {
-														visible : true
+														visible : false
 													},
 													superscript : {
-														visible : true
+														visible : false
 													},
 
 													undo : {
@@ -229,37 +198,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													},
 													insertHorizontalRule : {
 														visible : true
-													},
-
-													h4 : {
-														visible : true,
-														className : 'h4',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h4>'
-																: 'h4',
-														tags : [ 'h4' ],
-														tooltip : 'Header 4'
-													},
-													h5 : {
-														visible : true,
-														className : 'h5',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h5>'
-																: 'h5',
-														tags : [ 'h5' ],
-														tooltip : 'Header 5'
-													},
-													h6 : {
-														visible : true,
-														className : 'h6',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h6>'
-																: 'h6',
-														tags : [ 'h6' ],
-														tooltip : 'Header 6'
 													},
 
 													cut : {
@@ -346,10 +284,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													},
 
 													subscript : {
-														visible : true
+														visible : false
 													},
 													superscript : {
-														visible : true
+														visible : false
 													},
 
 													undo : {
@@ -367,37 +305,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													},
 													insertHorizontalRule : {
 														visible : true
-													},
-
-													h4 : {
-														visible : true,
-														className : 'h4',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h4>'
-																: 'h4',
-														tags : [ 'h4' ],
-														tooltip : 'Header 4'
-													},
-													h5 : {
-														visible : true,
-														className : 'h5',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h5>'
-																: 'h5',
-														tags : [ 'h5' ],
-														tooltip : 'Header 5'
-													},
-													h6 : {
-														visible : true,
-														className : 'h6',
-														command : ($.browser.msie || $.browser.safari) ? 'formatBlock'
-																: 'heading',
-														arguments : ($.browser.msie || $.browser.safari) ? '<h6>'
-																: 'h6',
-														tags : [ 'h6' ],
-														tooltip : 'Header 6'
 													},
 
 													cut : {
