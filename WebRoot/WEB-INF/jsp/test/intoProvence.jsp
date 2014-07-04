@@ -216,7 +216,7 @@ function imagezoom(new_w, new_h){
 						</c:otherwise>
 						</c:choose>
 					 -->
-					 	<img class="temp-pic" src="weather-icon/${weatherData.imgCode}" onload="imagezoom.call(this, 164, 150);" />
+					 	<img class="temp-pic" src="weather-icon-vega/${weatherData.imgCode}" onload="imagezoom.call(this, 164, 150);" />
 						<p class="temp">${weatherData.lowTemp}℃ ~ ${weatherData.highTemp}℃</p>
 						<p class="pro-title">普罗旺斯</p>
 						<p class="date">${weatherData.date} <div id="currentTime"></div></p>
