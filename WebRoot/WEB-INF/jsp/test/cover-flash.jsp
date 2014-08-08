@@ -24,13 +24,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=JS_PATH%>common/jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="<%=CSS_PATH%>reset.css" />
 <link rel="stylesheet" type="text/css" href="<%=CSS_PATH%>func.css" />
+<style type="text/css">
+html { overflow-x: hidden; overflow-y: hidden; }
+</style>
 
 </head>
 
 <body>
-	<div align='center'>
-		<embed src="music/cover-new-1.swf" type="application/x-shockwave-flash" width="100%" height="100%" loop="true" autostart="true"></embed>
+	<div 
+		style="cursor: hand; position:absolute; opacity: 0.1;width:100%; height:100%; z-index:1; visibility: visible; text-align:center;">
+		<a href="index.do"> <img
+			src="images/blank.png"
+			width="100%" height="100%" border="0"></a>
 	</div>
-	<div style="display:none;"><a href="index.do">首页</a></div>
+	<div style="z-index:-1;text-align:center;">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+			codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+			width="100%" height="100%" id="flashlogo">
+			<param name="movie" value="music/cover-new-1.swf">
+			<param name="quality" value=high>
+			<embed src="music/cover-new-1.swf" quality=high
+				width="100%" height="100%" 
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.macromedia.com/go/getflashplayer"
+				wmode="transparent">
+			</embed>
+			<param name="wmode" value="transparent" />
+		</object>
+	</div>
+
+
 </body>
 </html>

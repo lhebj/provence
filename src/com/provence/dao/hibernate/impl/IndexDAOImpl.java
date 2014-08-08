@@ -40,7 +40,10 @@ public class IndexDAOImpl implements IIndexDAO {
 	@Override
 	public List<Index> getRandomIndexList(int limit, String typeIdx) {
 		// TODO Auto-generated method stub
-		String hql = " from Index  where typeIdx=:typeIdx order by rand() ";
+//		String hql = " from Index  where typeIdx=:typeIdx order by rand() ";
+		
+		//另外首页的滚动图片，他们想按顺序播放。就是每次打开时候不随机了 ，罗逸亭 2014/7/31 13:53:22
+		String hql = " from Index  where typeIdx=:typeIdx order by id desc ";
 		Map<String, Object> param = new HashMap<String, Object>();
 		param.put("typeIdx", typeIdx);
 		return basicHibernateDao.getResultList(0, limit, hql, param);
