@@ -106,6 +106,8 @@ function imagezoom(new_w, new_h){
     this.height = zoom_h;
 }
 </script>
+
+<%@ include file="common/tongji.jsp"%>
 </head>
 
 <body>

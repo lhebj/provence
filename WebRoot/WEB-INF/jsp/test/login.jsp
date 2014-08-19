@@ -37,6 +37,8 @@ body {
 }
 </style>
 <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<%@ include file="common/tongji.jsp"%>
 </head>
 
 <body>

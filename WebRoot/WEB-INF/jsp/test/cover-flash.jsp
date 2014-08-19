@@ -28,6 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 html { overflow-x: hidden; overflow-y: hidden; }
 </style>
 
+<%@ include file="common/tongji.jsp"%>
 </head>
 
 <body>

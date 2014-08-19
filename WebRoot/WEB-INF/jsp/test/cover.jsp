@@ -53,6 +53,8 @@ a, a:hover, a:link{
 	z-index:100;
 }
 		</style>
+		
+		<%@ include file="common/tongji.jsp"%>
   </head>
   
   <body>    

@@ -36,6 +36,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				margin-bottom:134px;
 			}
 	</style>
+	
+	<%@ include file="common/tongji.jsp"%>
   </head>
   
   <body>

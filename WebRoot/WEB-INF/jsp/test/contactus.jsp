@@ -33,6 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="<%=JS_PATH%>banner.js?v=<%=version%>"></script>
 	<script type="text/javascript" src="<%=JS_PATH%>contact.js?v=<%=version%>"></script>
 	<script type="text/javascript" src="<%=JS_PATH%>register.js?v=<%=version%>"></script>
+	<%@ include file="common/tongji.jsp"%>
   </head>
   
   <body>

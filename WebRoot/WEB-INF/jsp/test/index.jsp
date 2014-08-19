@@ -49,7 +49,7 @@ body {
 	-->
 	
 <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
-
+<%@ include file="common/tongji.jsp"%>
 </head>
 
 <body>

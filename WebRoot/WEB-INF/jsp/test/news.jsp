@@ -31,6 +31,7 @@
 	<script type="text/javascript" src="<%=JS_PATH%>common/jquery.slides.js"></script>
 	<script type="text/javascript" src="<%=JS_PATH%>banner.js"></script>
 	<script type="text/javascript" src="<%=JS_PATH%>register.js"></script>
+	<%@ include file="common/tongji.jsp"%>
   </head>
   
   <body>
