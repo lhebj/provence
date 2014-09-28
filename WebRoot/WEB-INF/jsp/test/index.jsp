@@ -109,13 +109,13 @@ body {
 							src="<%=IMAGE_PATH%>blognew.png" /></a></li>
 					<li class="icon-nav-item index-shopping "><a
 						href="javascript:;"><img
-							src="<%=IMAGE_PATH%>index-shopping.png" /></a> <!-- 
+							src="<%=IMAGE_PATH%>index-shopping.png" /></a> 
 							<ul class="shopping-contaiter">
-								<li class="shopping-item"><a href="javascript:;"><img src="<%=IMAGE_PATH%>jd.png" /></a><li>
-								<li class="shopping-item"><a href="javascript:;"><img src="<%=IMAGE_PATH%>refeng.png" /></a><li>
-								<li class="shopping-item"><a href="javascript:;"><img src="<%=IMAGE_PATH%>tianmao.png" /></a><li>
+								<li class="shopping-item"><a href="http://shop111875235.taobao.com/?spm=a230r.7195193.1997079397.20.hE2MtH"><img src="<%=IMAGE_PATH%>shop-taobao.png" /></a><li>
+								<li class="shopping-item"><a href="http://www.nnkou.com/plws.html"><img src="<%=IMAGE_PATH%>shop-nnkou.png" /></a><li>
+								<li class="shopping-item"><a href="http://www.ujipin.com/s-k%E9%98%B3%E5%85%89%E6%99%AE%E7%BD%97%E6%97%BA%E6%96%AF-c0.html"><img src="<%=IMAGE_PATH%>shop-ujipin.png" /></a><li>
 							</ul>
-							 --></li>
+					</li>
 					<li class="icon-nav-item "><a href="contactus.do"><img
 							src="<%=IMAGE_PATH%>index-contact.png" /></a></li>
 					<li class="icon-nav-item "><a href="contactus.do"><img

@@ -185,7 +185,7 @@
 .shopping-wrapper{
 	overflow:hidden;
 	margin-top:10px;
-	margin-bottom:105px;
+	/*margin-bottom:105px;*/
 }
 .shopping-wrapper .shopping{
 	width:237px;
