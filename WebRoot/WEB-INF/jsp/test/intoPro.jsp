@@ -129,5 +129,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	    <%@ include file="common/footer.jsp" %>
     </div>
+    <%@ include file="common/baidutongji.jsp" %>
   </body>
 </html>

@@ -44,5 +44,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<tr><td><input name="ok" type= "submit" value="提交"></td></tr>
 	</form>
 </table>
+<%@ include file="common/baidutongji.jsp" %>
   </body>
 </html>

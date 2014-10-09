@@ -54,6 +54,6 @@ html { overflow-x: hidden; overflow-y: hidden; }
 		</object>
 	</div>
 
-
+<%@ include file="common/baidutongji.jsp" %>
 </body>
 </html>

@@ -133,5 +133,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								});		
 		});
 	</script>
+	<%@ include file="common/baidutongji.jsp" %>
   </body>
 </html>

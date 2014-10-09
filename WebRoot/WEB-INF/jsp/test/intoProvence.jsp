@@ -243,5 +243,6 @@ function imagezoom(new_w, new_h){
 		<div class="pagination">${pageutil}</div>
 		<%@ include file="common/footer.jsp"%>
 	</div>
+	<%@ include file="common/baidutongji.jsp" %>
 </body>
 </html>

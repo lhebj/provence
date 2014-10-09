@@ -140,5 +140,6 @@ body {
 <script type="text/javascript" src="<%=JS_PATH%>index.js?v=<%=version%>"></script>
 <script type="text/javascript"
 	src="<%=JS_PATH%>register.js?v=<%=version%>"></script>
+	<%@ include file="common/baidutongji.jsp" %>
 </body>
 </html>

@@ -97,5 +97,6 @@ a, a:hover, a:link{
 			});
 		</script>
 		 -->
+		 <%@ include file="common/baidutongji.jsp" %>
   </body>
 </html>
