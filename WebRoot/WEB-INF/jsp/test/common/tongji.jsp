@@ -6,16 +6,25 @@
 	boolean isAimebio = serverName.indexOf("aimebio") > -1 ;
 	boolean isProdepro = serverName.indexOf("prodepro") > -1 ;
 %>
+<!-- 
 <% if(isAimebio) {%>
+
 <script type="text/javascript" src="http://js.tongji.linezing.com/3503409/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3503409/tongji.gif"/></a></noscript>
 <%} %>
 
 <% if(isProdepro) {%>
 <script type="text/javascript" src="http://js.tongji.linezing.com/3503410/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3503410/tongji.gif"/></a></noscript>
 <%} %>
+ -->
 
+<!-- tongji -->
+<script type="text/javascript">
 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbabc3fb48883b829fbe410e61e80d0db' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
 <!--  share  -->
 
 

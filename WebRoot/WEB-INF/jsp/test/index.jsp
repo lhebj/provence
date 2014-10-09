@@ -54,11 +54,13 @@ body {
 
 <body>
 	<div id="bgmusic">	 
+	<!-- 
 	<%if(request.getHeader( "User-Agent" ).toLowerCase().indexOf( "msie" ) >= 0 || request.getHeader( "User-Agent" ).toLowerCase().indexOf( "rv:11.0" ) >= 0 ) {%>
 		<bgsound loop="infinite" volume="-2500" src="music/zhile.mp3" >
 	<%}else{ %>
 		<audio id="audio" src="music/zhile.mp3" hidden="hidden" autoplay="autoplay" volume="0.1" loop="loop"></audio>
 	<%}%>
+	 -->
 	</div>
 	<div class="main-section">
 		<%@ include file="head.jsp"%>
